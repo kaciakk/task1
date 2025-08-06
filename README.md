@@ -34,10 +34,4 @@ The app is designed to be easily extendable. It includes several preliminary pag
 
 ---
 
-## Getting Started
-
-### Prerequisites  
-- Node.js installed  
-- MongoDB instance (local or cloud)
-
 
