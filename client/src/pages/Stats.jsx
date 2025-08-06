@@ -23,17 +23,33 @@ const Stats = () => {
   const availableBalance = emeraldBalance - totalCampaignFunds;
 
   return (
-    <div className="p-4 bg-white shadow rounded-md max-w-md mx-auto">
-      <h2 className="text-xl font-semibold mb-4">Statistics</h2>
-      <p>
-        <strong>Emerald Balance:</strong> {emeraldBalance.toFixed(2)}
-      </p>
-      <p>
-        <strong>Total Campaign Budget:</strong> {totalCampaignFunds.toFixed(2)}
-      </p>
-      <p>
-        <strong>Available Funds:</strong> {availableBalance.toFixed(2)}
-      </p>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto p-4">
+      <div className="bg-white shadow rounded-md p-6 text-center">
+        <h3 className="text-sm font-medium text-gray-500 mb-2">
+          Emerald Balance
+        </h3>
+        <p className="text-2xl font-semibold text-emerald-600">
+          {emeraldBalance.toFixed(2)}
+        </p>
+      </div>
+
+      <div className="bg-white shadow rounded-md p-6 text-center">
+        <h3 className="text-sm font-medium text-gray-500 mb-2">
+          Total Campaign Budget
+        </h3>
+        <p className="text-2xl font-semibold text-blue-600">
+          {totalCampaignFunds.toFixed(2)}
+        </p>
+      </div>
+
+      <div className="bg-white shadow rounded-md p-6 text-center">
+        <h3 className="text-sm font-medium text-gray-500 mb-2">
+          Available Funds
+        </h3>
+        <p className="text-2xl font-semibold text-indigo-600">
+          {availableBalance.toFixed(2)}
+        </p>
+      </div>
     </div>
   );
 };

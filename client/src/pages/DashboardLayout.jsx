@@ -30,7 +30,7 @@ const DashboardLayout = () => {
         <SmallSidebar />
 
         <div
-          className={`transition-all duration-300 ${
+          className={`transition-all duration-300  ${
             showSidebar ? "md:pl-72" : "md:pl-0"
           }`}
         >

@@ -1,7 +1,7 @@
 import { useLoaderData, redirect, Form, Link } from "react-router-dom";
 import customFetch from "../utils/customFetch";
 import { LuTrash2, LuPencilLine } from "react-icons/lu";
-
+import { toast } from "react-toastify";
 export const loader = async () => {
   try {
     const response = await customFetch.get("/campaigns");
@@ -16,6 +16,7 @@ export const action = async ({ request }) => {
   const formData = await request.formData();
   const id = formData.get("id");
   await customFetch.delete(`/campaigns/${id}`);
+  toast.success("Campaign deleted successfully!");
   return redirect("/dashboard/all-campaigns");
 };
 
@@ -173,10 +174,13 @@ const AllCampaigns = () => {
               </p>
 
               <div className="flex gap-4 mt-2">
-                <button className="text-blue-600 hover:underline flex items-center gap-1 cursor-pointer">
+                <Link
+                  to={`../edit-campaign/${campaign._id}`}
+                  className="text-blue-600 hover:underline flex items-center gap-1 cursor-pointer"
+                >
                   <LuPencilLine size={20} />
                   Edit
-                </button>
+                </Link>
 
                 <Form method="post">
                   <input type="hidden" name="id" value={campaign._id} />
